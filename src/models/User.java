@@ -37,6 +37,37 @@ public class User {
         String photo,
         String description,
         boolean emailVerified,
+        boolean active
+    ) {
+        this.username = username;
+        this.password = password;
+        this.email = email;
+        this.phone = phone;
+        this.websiteURL = websiteURL;
+        this.location = location;
+        this.dateOfBirth = dateOfBirth;
+        this.photo = photo;
+        this.description = description;
+        this.emailVerified = emailVerified;
+        this.active = active;
+        this.subscribedGroups = new ArrayList<Group>();
+        this.articles = new ArrayList<Article>();
+        this.sentMessages = new ArrayList<PrivateMessage>();
+        this.notifications = new ArrayList<Notification>();
+        this.bookmarks = new ArrayList<Bookmark>();
+    }
+
+    public User(
+        String username,
+        String password,
+        String email,
+        String phone,
+        String websiteURL,
+        String location,
+        Date dateOfBirth,
+        String photo,
+        String description,
+        boolean emailVerified,
         boolean active,
         Profile profile
     ) {
@@ -95,6 +126,10 @@ public class User {
         this.sentMessages = sentMessages;
         this.notifications = notifications;
         this.bookmarks = bookmarks;
+    }
+
+    public void subscribeToGroup(Group group) {
+        this.subscribedGroups.add(group);
     }
 
     public String getUsername() {

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-class Group {
+public class Group {
     private String groupName;
     private Date creationDate;
     private int memberCount;
@@ -14,6 +14,15 @@ class Group {
     private List<SubGroup> subgroups;
 
     public Group() {}
+
+    public Group(String groupName, int memberCount, boolean isSubgroup, Moderator moderator) {
+        this.groupName = groupName;
+        this.creationDate = new Date();
+        this.memberCount = memberCount;
+        this.isSubgroup = isSubgroup;
+        this.moderator = moderator;
+        this.subgroups = new ArrayList<SubGroup>();
+    }
 
     public Group(String groupName, Date creationDate, int memberCount, boolean isSubgroup, Moderator moderator) {
         this.groupName = groupName;
